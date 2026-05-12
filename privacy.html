@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SEOptic</title>
+  <meta name="description" content="SEOptic Chrome extension Privacy Policy. No personal data is collected, stored, or shared. All processing is done locally in your browser." />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" type="image/png" href="icon128.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0b0f1a;
+      --bg2:     #111827;
+      --card:    #161d2e;
+      --border:  #1e2d45;
+      --accent:  #3b82f6;
+      --text:    #f1f5f9;
+      --text2:   #94a3b8;
+      --text3:   #64748b;
+      --success: #22c55e;
+      --warn:    #f59e0b;
+      --radius:  12px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Top bar ── */
+    .topbar {
+      background: rgba(11,15,26,.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .topbar-inner {
+      max-width: 860px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .topbar-logo {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none; color: var(--text); font-weight: 700; font-size: 1.05rem;
+    }
+    .topbar-logo img { width: 26px; height: 26px; border-radius: 6px; }
+    .topbar-logo strong { color: var(--accent); }
+    .topbar-back {
+      font-size: .82rem; color: var(--text3); text-decoration: none;
+      display: flex; align-items: center; gap: 5px; transition: color .2s;
+    }
+    .topbar-back:hover { color: var(--accent); }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: 860px; margin: 0 auto;
+      padding: 64px 24px 100px;
+    }
+
+    /* ── Header ── */
+    .doc-header { margin-bottom: 48px; }
+    .doc-label {
+      display: inline-block;
+      background: rgba(59,130,246,.12);
+      border: 1px solid rgba(59,130,246,.25);
+      color: var(--accent);
+      border-radius: 50px;
+      font-size: .75rem; font-weight: 700; padding: 4px 14px;
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: 20px;
+    }
+    .doc-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800; letter-spacing: -.03em;
+      margin-bottom: 14px;
+    }
+    .doc-meta {
+      display: flex; flex-wrap: wrap; gap: 20px;
+      font-size: .83rem; color: var(--text3);
+    }
+    .doc-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── Summary box ── */
+    .summary-box {
+      background: rgba(34,197,94,.07);
+      border: 1px solid rgba(34,197,94,.2);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+    .summary-box p {
+      font-size: .92rem; color: #86efac; font-weight: 500; line-height: 1.65;
+    }
+    .summary-box p + p { margin-top: 8px; }
+    .summary-box .sum-icon { margin-right: 6px; }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 44px; }
+    .section h2 {
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--text);
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section h2 .s-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 8px;
+      background: var(--accent); color: #fff;
+      font-size: .72rem; font-weight: 800; flex-shrink: 0;
+    }
+
+    .section p { color: var(--text2); font-size: .93rem; margin-bottom: 12px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%; border-collapse: collapse; margin: 16px 0;
+      font-size: .86rem;
+    }
+    .data-table thead th {
+      text-align: left; color: var(--text3); font-weight: 600;
+      padding: 10px 14px; border-bottom: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .data-table thead th:first-child { border-radius: 8px 0 0 0; }
+    .data-table thead th:last-child  { border-radius: 0 8px 0 0; }
+    .data-table tbody tr { border-bottom: 1px solid var(--border); }
+    .data-table tbody tr:last-child { border-bottom: none; }
+    .data-table tbody td {
+      padding: 12px 14px; color: var(--text2); vertical-align: top;
+      background: var(--card);
+    }
+    .data-table tbody td:first-child { color: var(--text); font-weight: 600; }
+    .badge-no  { color: #fca5a5; font-weight: 600; }
+    .badge-yes { color: #86efac; font-weight: 600; }
+    .badge-local { color: #fcd34d; font-weight: 600; }
+
+    /* ── Bullet list ── */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin: 14px 0; }
+    .check-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: .9rem; color: var(--text2);
+    }
+    .check-list li .icon { flex-shrink: 0; margin-top: 1px; font-size: .95rem; }
+
+    /* ── Info card ── */
+    .info-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px 22px; margin: 16px 0; font-size: .88rem;
+    }
+    .info-card strong { color: var(--text); display: block; margin-bottom: 6px; }
+    .info-card p { color: var(--text2); margin: 0; }
+
+    /* ── Contact ── */
+    .contact-block {
+      background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px 28px;
+    }
+    .contact-block p { margin-bottom: 10px; font-size: .9rem; color: var(--text2); }
+    .contact-block a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .contact-block a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    .doc-footer {
+      border-top: 1px solid var(--border);
+      margin-top: 64px; padding-top: 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+      font-size: .8rem; color: var(--text3);
+    }
+    .doc-footer a { color: var(--text3); text-decoration: none; }
+    .doc-footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .doc-meta { flex-direction: column; gap: 8px; }
+      .topbar-back span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="topbar-logo">
+      <img src="icon128.png" alt="SEOptic" />
+      <span>SEO<strong>ptic</strong></span>
+    </a>
+    <a href="index.html" class="topbar-back">← <span>Back to homepage</span></a>
+  </div>
+</header>
+
+<main class="page">
+
+  <header class="doc-header">
+    <div class="doc-label">Legal</div>
+    <h1>Privacy Policy</h1>
+    <div class="doc-meta">
+      <span>📄 <strong>Product:</strong> SEOptic Chrome Extension</span>
+      <span>📅 <strong>Effective date:</strong> May 12, 2026</span>
+      <span>🔄 <strong>Last updated:</strong> May 12, 2026</span>
+    </div>
+  </header>
+
+  <div class="summary-box">
+    <p><span class="sum-icon">🔒</span><strong>Short version:</strong> SEOptic does not collect, store, or transmit any personal data. All analysis runs locally inside your Chrome browser. The only data stored locally is your language preference.</p>
+    <p><span class="sum-icon">✅</span>We do not use analytics, we do not run any servers, and we do not sell or share any information about you or the pages you visit.</p>
+  </div>
+
+  <!-- 1. Who we are -->
+  <section class="section">
+    <h2><span class="s-num">1</span>Who We Are</h2>
+    <p>SEOptic ("the Extension", "we", "us") is a free Google Chrome browser extension that performs on-page SEO analysis. It is an independent project developed and maintained by a single developer. The extension's accompanying website is hosted on <strong>GitHub Pages</strong> at <code>https://&lt;username&gt;.github.io/seOptic/</code>.</p>
+    <p>This Privacy Policy applies to the Chrome extension SEOptic and its associated website. By installing or using the extension, you agree to the terms described here.</p>
+  </section>
+
+  <!-- 2. Data we collect -->
+  <section class="section">
+    <h2><span class="s-num">2</span>Data We Collect</h2>
+    <p>The table below gives a complete picture of every category of data that SEOptic handles.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Data category</th>
+          <th>Collected?</th>
+          <th>Where stored</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pages you visit</td>
+          <td class="badge-no">Never</td>
+          <td>—</td>
+          <td>URLs are read in memory only to perform analysis. They are never sent anywhere.</td>
+        </tr>
+        <tr>
+          <td>Page content (HTML, text)</td>
+          <td class="badge-no">Never</td>
+          <td>—</td>
+          <td>Parsed locally in the browser. Discarded after the popup closes.</td>
+        </tr>
+        <tr>
+          <td>Personal information</td>
+          <td class="badge-no">Never</td>
+          <td>—</td>
+          <td>No names, emails, IPs, or identifiers are collected.</td>
+        </tr>
+        <tr>
+          <td>Browsing history</td>
+          <td class="badge-no">Never</td>
+          <td>—</td>
+          <td>SEOptic has no access to browser history.</td>
+        </tr>
+        <tr>
+          <td>Language preference</td>
+          <td class="badge-local">Locally only</td>
+          <td>chrome.storage.local</td>
+          <td>Stores your chosen interface language (sr / en / de). Never leaves your device.</td>
+        </tr>
+        <tr>
+          <td>Google OAuth token</td>
+          <td class="badge-local">Session only</td>
+          <td>Chrome Identity API</td>
+          <td>Used only when you export to Google Sheets. Managed by Chrome — not stored by us.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 3. Local processing -->
+  <section class="section">
+    <h2><span class="s-num">3</span>How the Extension Works — Local Processing</h2>
+    <p>SEOptic operates entirely within your browser. When you click the extension icon, it:</p>
+    <ul class="check-list">
+      <li><span class="icon">🔍</span>Reads the current page's DOM (HTML structure) using a content script injected into the active tab.</li>
+      <li><span class="icon">📊</span>Analyzes meta tags, heading structure, image ALT attributes, links, and performance metrics (Core Web Vitals via the browser's PerformanceObserver API).</li>
+      <li><span class="icon">🧠</span>Runs all computation in-memory inside your browser. Results are displayed in the popup and discarded when you close it.</li>
+      <li><span class="icon">🚫</span>Never sends page data, analysis results, or any derivative information to external servers.</li>
+    </ul>
+    <p>SEOptic has <strong>no backend server, no database, and no cloud infrastructure</strong> of its own.</p>
+  </section>
+
+  <!-- 4. Local storage -->
+  <section class="section">
+    <h2><span class="s-num">4</span>Local Storage (<code>chrome.storage.local</code>)</h2>
+    <p>The extension uses Chrome's built-in <code>chrome.storage.local</code> API exclusively to remember your chosen interface language (Serbian, English, or German). This data:</p>
+    <ul class="check-list">
+      <li><span class="icon">✅</span>Stays on your device and is never transmitted to any server.</li>
+      <li><span class="icon">✅</span>Contains no personally identifiable information — only a language code string (<code>"sr"</code>, <code>"en"</code>, or <code>"de"</code>).</li>
+      <li><span class="icon">✅</span>Can be cleared at any time by removing the extension or clearing Chrome extension storage in your browser settings.</li>
+    </ul>
+  </section>
+
+  <!-- 5. Google Sheets -->
+  <section class="section">
+    <h2><span class="s-num">5</span>Optional Google Sheets Export</h2>
+    <p>SEOptic offers an optional feature to export SEO analysis reports directly to Google Sheets. This feature:</p>
+    <ul class="check-list">
+      <li><span class="icon">🔑</span>Requires you to authorize SEOptic via Google OAuth 2.0 using the Chrome Identity API (<code>chrome.identity</code>). You will see a standard Google consent screen before granting access.</li>
+      <li><span class="icon">📁</span>Requests only the <code>drive.file</code> scope, which limits access to files created by the extension itself. SEOptic cannot read any existing files in your Google Drive.</li>
+      <li><span class="icon">🚫</span>Does not store your Google account credentials, email address, or OAuth tokens. The token is managed entirely by Chrome and is not accessible to or retained by the developer.</li>
+      <li><span class="icon">⚙️</span>Only contacts Google's servers (<code>sheets.googleapis.com</code>) to create the report spreadsheet. No other data is transmitted.</li>
+    </ul>
+    <div class="info-card">
+      <strong>Revoking access</strong>
+      <p>You can revoke SEOptic's Google Sheets access at any time by visiting <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">myaccount.google.com/permissions</a> and removing SEOptic from the list of connected apps. This does not affect any other functionality of the extension.</p>
+    </div>
+  </section>
+
+  <!-- 6. Website & GitHub Pages -->
+  <section class="section">
+    <h2><span class="s-num">6</span>Website &amp; GitHub Pages Hosting</h2>
+    <p>The SEOptic promotional website is a static HTML site hosted on <strong>GitHub Pages</strong>. Regarding the website:</p>
+    <ul class="check-list">
+      <li><span class="icon">🌐</span>GitHub Pages may log standard server access data (IP address, browser type, referring URL) as part of normal web server operation. This is governed by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">GitHub's Privacy Statement</a>, not this policy.</li>
+      <li><span class="icon">🎬</span>The website embeds a YouTube video via an <code>&lt;iframe&gt;</code>. YouTube (Google) may set cookies or collect data when you interact with this embed, subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Google's Privacy Policy</a>.</li>
+      <li><span class="icon">🔤</span>The website loads fonts from Google Fonts. Google may log font requests. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Google's Privacy Policy</a>.</li>
+      <li><span class="icon">🍪</span>The website itself sets no cookies and uses no analytics trackers.</li>
+    </ul>
+  </section>
+
+  <!-- 7. Permissions -->
+  <section class="section">
+    <h2><span class="s-num">7</span>Chrome Extension Permissions Explained</h2>
+    <p>SEOptic requests the following Chrome permissions. Each is used solely for the stated purpose:</p>
+    <ul class="check-list">
+      <li><span class="icon">📌</span><strong>activeTab</strong> — Reads the content of the currently active tab when you click the icon. No other tabs are ever accessed.</li>
+      <li><span class="icon">📌</span><strong>scripting</strong> — Injects the content script that reads the page DOM for analysis.</li>
+      <li><span class="icon">📌</span><strong>tabs</strong> — Reads the URL of the active tab to display it in the extension popup.</li>
+      <li><span class="icon">📌</span><strong>storage</strong> — Saves your language preference locally via <code>chrome.storage.local</code>.</li>
+      <li><span class="icon">📌</span><strong>identity</strong> — Used only for Google OAuth when you choose to export to Google Sheets.</li>
+      <li><span class="icon">📌</span><strong>downloads</strong> — Saves CSV export files to your local Downloads folder.</li>
+      <li><span class="icon">📌</span><strong>host_permissions (&lt;all_urls&gt;)</strong> — Required to fetch <code>robots.txt</code> and <code>sitemap.xml</code> files from the domain of the page you are analyzing, in order to detect sitemap presence and crawl directives.</li>
+    </ul>
+  </section>
+
+  <!-- 8. Third-party services -->
+  <section class="section">
+    <h2><span class="s-num">8</span>Third-Party Services</h2>
+    <p>SEOptic does not integrate with any analytics, advertising, or data-broker services. The only external services it may contact are:</p>
+    <ul class="check-list">
+      <li><span class="icon">🔗</span><strong>Google Sheets API</strong> — only when you explicitly use the Sheets export feature.</li>
+      <li><span class="icon">🔗</span><strong>robots.txt / sitemap.xml endpoints</strong> of the website you are currently analyzing — only to check sitemap availability. No data about you is sent to these endpoints.</li>
+    </ul>
+    <p>The link-checker feature performs <code>HEAD</code> requests to URLs found on the page you analyze. These requests originate from your own browser and IP address, not from any server operated by SEOptic.</p>
+  </section>
+
+  <!-- 9. Children -->
+  <section class="section">
+    <h2><span class="s-num">9</span>Children's Privacy</h2>
+    <p>SEOptic is a professional developer tool intended for users aged 16 and older. We do not knowingly collect any information from children. If you believe a child under 16 has used the extension, please contact us and we will take appropriate measures.</p>
+  </section>
+
+  <!-- 10. Changes -->
+  <section class="section">
+    <h2><span class="s-num">10</span>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy to reflect changes in the extension's features or applicable law. When we do, we will update the "Last updated" date at the top of this page. Continued use of the extension after changes are posted constitutes acceptance of the updated policy.</p>
+    <p>Significant changes that affect how data is handled will be communicated via the Chrome Web Store listing update notes.</p>
+  </section>
+
+  <!-- 11. Contact -->
+  <section class="section">
+    <h2><span class="s-num">11</span>Contact</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the data practices of SEOptic, please contact us:</p>
+    <div class="contact-block">
+      <p>📧 <strong>Email:</strong> <a href="mailto:senjidejan@gmail.com">senjidejan@gmail.com</a></p>
+      <p>💻 <strong>GitHub:</strong> <a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a> (source code and issue tracker)</p>
+      <p style="margin-top: 14px; font-size: .83rem;">We aim to respond to all inquiries within 5 business days.</p>
+    </div>
+  </section>
+
+  <footer class="doc-footer">
+    <span>© 2026 SEOptic. All rights reserved.</span>
+    <a href="index.html">← Back to homepage</a>
+  </footer>
+
+</main>
+</body>
+</html>
