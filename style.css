@@ -40,7 +40,7 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  display: flex; align-items: center; gap: 24px;
+  display: flex; align-items: center; gap: 20px;
   height: var(--nav-h);
 }
 .logo {
@@ -50,19 +50,27 @@ body {
 }
 .logo-icon { font-size: 1.4rem; }
 .logo-text strong { color: var(--accent); }
+
+/* Desktop links — fill remaining space */
 .nav-links { display: flex; gap: 4px; flex: 1; }
 .nav-link {
   color: var(--text2); text-decoration: none; padding: 6px 14px;
   border-radius: var(--radius-sm); font-size: .93rem; transition: color .2s, background .2s;
 }
 .nav-link:hover { color: var(--text); background: var(--bg3); }
-.nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
 
-/* ── Hamburger ── */
+/* nav-end: always visible, right side */
+.nav-end {
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+}
+/* Install button — hidden on mobile */
+.nav-cta { /* inherits .btn .btn-primary */ }
+
+/* ── Hamburger — hidden on desktop ── */
 .hamburger {
   display: none;
   flex-direction: column; justify-content: center; align-items: center; gap: 5px;
-  width: 40px; height: 40px; flex-shrink: 0; margin-left: auto;
+  width: 38px; height: 38px; flex-shrink: 0;
   background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius-sm);
   cursor: pointer; padding: 0;
 }
@@ -91,23 +99,23 @@ body {
   transition: max-height .35s cubic-bezier(.4,0,.2,1), opacity .25s ease;
 }
 .drawer-inner {
-  padding: 8px 0 20px;
+  padding: 16px 0 28px;
   display: flex; flex-direction: column;
 }
 .drawer-links { display: flex; flex-direction: column; }
 .drawer-links .nav-link {
-  display: block; padding: 14px 0; font-size: .95rem;
+  display: block; padding: 16px 0; font-size: 1rem; font-weight: 500;
   border-bottom: 1px solid var(--border); border-radius: 0;
   color: var(--text2);
 }
 .drawer-links .nav-link:last-child { border-bottom: none; }
 .drawer-links .nav-link:hover { background: none; color: var(--text); }
-.drawer-bottom {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; padding-top: 18px; margin-top: 6px;
-  border-top: 1px solid var(--border);
+.drawer-install {
+  display: flex; justify-content: center;
+  width: 100%; margin-top: 24px;
+  padding: 14px; border-radius: var(--radius);
+  font-size: .95rem;
 }
-.drawer-install { font-size: .85rem; padding: 9px 20px; }
 
 /* Lang switcher */
 .lang-switcher { display: flex; gap: 2px; background: var(--bg3); border-radius: 8px; padding: 3px; }
@@ -380,9 +388,13 @@ section { padding: 100px 0; }
   .export-inner { flex-direction: column; gap: 40px; }
 }
 @media (max-width: 768px) {
-  .nav-links  { display: none; }
-  .nav-right  { display: none; }
-  .hamburger  { display: flex; }
+  /* Sakrij desktop linkove i Install dugme */
+  .nav-links { display: none; }
+  .nav-cta   { display: none; }
+  /* nav-end (lang + hamburger) guraj desno kad nema nav-links flex:1 */
+  .nav-end   { margin-left: auto; }
+  /* Prikaži hamburger */
+  .hamburger { display: flex; }
   .feat-grid { grid-template-columns: 1fr; }
   .privacy-grid { grid-template-columns: 1fr; }
   .screenshot-grid { grid-template-columns: 1fr; }
