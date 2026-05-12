@@ -30,6 +30,8 @@
       <img src="icon128.png" alt="SEOProbe" class="logo-img" />
       <span class="logo-text">SEO<strong>Probe</strong></span>
     </a>
+
+    <!-- Desktop nav -->
     <nav class="nav-links">
       <a href="#video" class="nav-link" data-i18n="nav_demo">Demo</a>
       <a href="#features" class="nav-link" data-i18n="nav_features">Funkcionalnosti</a>
@@ -43,6 +45,33 @@
         <button class="lang-btn" data-lang="de">DE</button>
       </div>
       <a href="#install" class="btn btn-primary" data-i18n="nav_install">Instaliraj</a>
+    </div>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="hamburger" id="hamburger" aria-label="Otvori meni" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="container drawer-inner">
+      <nav class="drawer-links">
+        <a href="#video"       class="nav-link" data-i18n="nav_demo">Demo</a>
+        <a href="#features"    class="nav-link" data-i18n="nav_features">Funkcionalnosti</a>
+        <a href="#screenshots" class="nav-link" data-i18n="nav_screens">Snimci</a>
+        <a href="privacy.html" class="nav-link" data-i18n="nav_privacy">Privatnost</a>
+      </nav>
+      <div class="drawer-bottom">
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="sr">SR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+        <a href="#install" class="btn btn-primary drawer-install" data-i18n="nav_install">Instaliraj</a>
+      </div>
     </div>
   </div>
 </header>
@@ -373,5 +402,37 @@
 </footer>
 
 <script src="i18n.js"></script>
+<script>
+(function () {
+  var btn    = document.getElementById('hamburger');
+  var drawer = document.getElementById('mobile-drawer');
+  if (!btn || !drawer) return;
+
+  function close() {
+    btn.classList.remove('is-open');
+    drawer.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+
+  btn.addEventListener('click', function () {
+    var opening = !btn.classList.contains('is-open');
+    btn.classList.toggle('is-open');
+    drawer.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', String(opening));
+    drawer.setAttribute('aria-hidden', String(!opening));
+  });
+
+  /* Zatvori meni kad se klikne na link ili Install dugme */
+  drawer.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', close);
+  });
+
+  /* Zatvori meni kad se klikne izvan navbara */
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navbar')) close();
+  });
+})();
+</script>
 </body>
 </html>
