@@ -73,6 +73,9 @@ const TRANSLATIONS = {
     inst_sub: 'Instaliraj SEOProbe i analiziraj prvu stranicu za manje od 30 sekundi.',
     inst_btn: 'Dodaj u Chrome — besplatno',
     inst_note: 'Chrome Web Store · Manifest V3 · Verzija 1.9',
+    lead_title: 'Potrebna vam je pomoć SEO stručnjaka?',
+    lead_desc: 'Ako nemate vremena da sami radite optimizaciju, stojim vam na raspolaganju za profesionalne SEO usluge.',
+    lead_btn: 'Kontaktiraj me',
     footer_copy: '© 2026 SEOProbe. Sva prava zadržana.',
     footer_priv: 'Privatnost',
     footer_contact: 'Kontakt',
@@ -151,6 +154,9 @@ const TRANSLATIONS = {
     inst_sub: 'Install SEOProbe and analyze your first page in under 30 seconds.',
     inst_btn: 'Add to Chrome — free',
     inst_note: 'Chrome Web Store · Manifest V3 · Version 1.9',
+    lead_title: 'Need help by SEO Expert?',
+    lead_desc: 'If you don\'t have time to do the optimization yourself, I am available for professional SEO services.',
+    lead_btn: 'Contact Me',
     footer_copy: '© 2026 SEOProbe. All rights reserved.',
     footer_priv: 'Privacy',
     footer_contact: 'Contact',
@@ -229,6 +235,9 @@ const TRANSLATIONS = {
     inst_sub: 'SEOProbe installieren und die erste Seite in unter 30 Sekunden analysieren.',
     inst_btn: 'Zu Chrome hinzufügen — kostenlos',
     inst_note: 'Chrome Web Store · Manifest V3 · Version 1.9',
+    lead_title: 'Benötigen Sie die Hilfe eines SEO-Experten?',
+    lead_desc: 'Wenn Sie keine Zeit haben, die Optimierung selbst vorzunehmen, stehe ich Ihnen für professionelle SEO-Dienstleistungen zur Verfügung.',
+    lead_btn: 'Kontaktiere mich',
     footer_copy: '© 2026 SEOProbe. Alle Rechte vorbehalten.',
     footer_priv: 'Datenschutz',
     footer_contact: 'Kontakt',
@@ -254,7 +263,7 @@ const TRANSLATIONS = {
     });
     // Update page title & meta description
     const titles = { sr: 'SEOProbe — Chrome ekstenzija za SEO analizu', en: 'SEOProbe — Chrome Extension for SEO Analysis', de: 'SEOProbe — Chrome-Erweiterung für SEO-Analyse' };
-    const descs  = { sr: 'SEOProbe je besplatna Chrome ekstenzija za kompletnu SEO analizu: naslovi, meta, slike, linkovi, Core Web Vitals i AI detektor.', en: 'SEOProbe is a free Chrome extension for complete SEO analysis: headings, meta, images, links, Core Web Vitals and AI detector.', de: 'SEOProbe ist eine kostenlose Chrome-Erweiterung für vollständige SEO-Analyse: Überschriften, Meta, Bilder, Links, Core Web Vitals und KI-Erkennung.' };
+    const descs = { sr: 'SEOProbe je besplatna Chrome ekstenzija za kompletnu SEO analizu: naslovi, meta, slike, linkovi, Core Web Vitals i AI detektor.', en: 'SEOProbe is a free Chrome extension for complete SEO analysis: headings, meta, images, links, Core Web Vitals and AI detector.', de: 'SEOProbe ist eine kostenlose Chrome-Erweiterung für vollständige SEO-Analyse: Überschriften, Meta, Bilder, Links, Core Web Vitals und KI-Erkennung.' };
     document.title = titles[lang] || titles.sr;
     const m = document.querySelector('meta[name="description"]');
     if (m) m.content = descs[lang] || descs.sr;
