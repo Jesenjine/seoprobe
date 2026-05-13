@@ -423,6 +423,30 @@
     </div>
   </section>
 
+  <!-- ══ SUPPORT ══ -->
+  <section class="support-section" id="support">
+    <div class="container">
+      <div class="support-card">
+        <div class="support-copy">
+          <span class="support-eyebrow" data-i18n="support_eyebrow">Support</span>
+          <h2 data-i18n="support_title">Support SEOProbe development</h2>
+          <p class="support-body" data-i18n="support_body">SEOProbe is free to use. If the extension saves you time or helps you catch SEO issues faster, you can support future development with a small voluntary contribution.</p>
+          <div class="support-actions">
+            <a href="https://www.paypal.com/ncp/payment/38ZLJ5YKNXKJ2"
+               class="btn btn-support-coffee"
+               target="_blank" rel="noopener noreferrer"
+               data-i18n="support_btn_coffee">Buy me a coffee ☕</a>
+          </div>
+          <p class="support-note" data-i18n="support_note">Your support helps cover testing, maintenance, browser updates and new features. Contributions are optional and are processed outside the Chrome extension. Google is not the recipient of any payment. Contributions do not unlock additional features in the current version; they simply support ongoing development.</p>
+        </div>
+        <div class="support-qr">
+          <img src="assets/Coffee for the-qrcode.png" alt="PayPal QR code" class="qr-img" />
+          <p class="qr-caption" data-i18n="support_qr_caption">Scan the QR code to support via PayPal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ FOOTER ══ -->
   <footer class="footer">
     <div class="container footer-inner">
@@ -469,6 +493,12 @@
       document.addEventListener('click', function (e) {
         if (!e.target.closest('.navbar')) close();
       });
+
+      /* Wire support button hrefs from URL constants in i18n.js */
+      var coffeeBtn = document.getElementById('btn-coffee');
+      var paypalBtn = document.getElementById('btn-paypal');
+      if (coffeeBtn && typeof BUY_ME_COFFEE_URL !== 'undefined') coffeeBtn.href = BUY_ME_COFFEE_URL;
+      if (paypalBtn && typeof PAYPAL_SUPPORT_URL !== 'undefined') paypalBtn.href = PAYPAL_SUPPORT_URL;
     })();
   </script>
 </body>

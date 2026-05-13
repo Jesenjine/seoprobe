@@ -1,3 +1,6 @@
+/* ── Support / Donation URL ── */
+const PAYPAL_URL = 'https://www.paypal.com/ncp/payment/38ZLJ5YKNXKJ2';
+
 const TRANSLATIONS = {
   sr: {
     nav_demo: 'Demo',
@@ -79,6 +82,13 @@ const TRANSLATIONS = {
     footer_copy: '© 2026 SEOProbe. Sva prava zadržana.',
     footer_priv: 'Privatnost',
     footer_contact: 'Kontakt',
+    support_eyebrow: 'Podrška',
+    support_title: 'Podrži razvoj SEOProbe-a',
+    support_body: 'SEOProbe je besplatan za korišćenje. Ako ti ekstenzija štedi vreme i pomaže da brže pronađeš SEO greške, dalji razvoj možeš podržati malom dobrovoljnom uplatom.',
+    support_note: 'Podrška pomaže u testiranju, održavanju, prilagođavanju novim verzijama browsera i razvoju novih funkcija. Uplata je opciona i obrađuje se van Chrome ekstenzije. Google nije primalac uplate. Uplate u trenutnoj verziji ne otključavaju dodatne funkcije; služe samo kao podrška daljem razvoju.',
+    support_btn_coffee: 'Počasti me kafom ☕',
+    support_btn_paypal: 'Podrži preko PayPal-a',
+    support_qr_caption: 'Skeniraj QR kod za podršku preko PayPal-a.',
   },
   en: {
     nav_demo: 'Demo',
@@ -160,6 +170,13 @@ const TRANSLATIONS = {
     footer_copy: '© 2026 SEOProbe. All rights reserved.',
     footer_priv: 'Privacy',
     footer_contact: 'Contact',
+    support_eyebrow: 'Support',
+    support_title: 'Support SEOProbe development',
+    support_body: 'SEOProbe is free to use. If the extension saves you time or helps you catch SEO issues faster, you can support future development with a small voluntary contribution.',
+    support_note: 'Your support helps cover testing, maintenance, browser updates and new features. Contributions are optional and are processed outside the Chrome extension. Google is not the recipient of any payment. Contributions do not unlock additional features in the current version; they simply support ongoing development.',
+    support_btn_coffee: 'Buy me a coffee ☕',
+    support_btn_paypal: 'Support via PayPal',
+    support_qr_caption: 'Scan the QR code to support via PayPal.',
   },
   de: {
     nav_demo: 'Demo',
@@ -241,6 +258,13 @@ const TRANSLATIONS = {
     footer_copy: '© 2026 SEOProbe. Alle Rechte vorbehalten.',
     footer_priv: 'Datenschutz',
     footer_contact: 'Kontakt',
+    support_eyebrow: 'Unterstützung',
+    support_title: 'SEOProbe-Entwicklung unterstützen',
+    support_body: 'SEOProbe ist kostenlos nutzbar. Wenn dir die Erweiterung Zeit spart oder hilft, SEO-Probleme schneller zu erkennen, kannst du die weitere Entwicklung mit einem kleinen freiwilligen Beitrag unterstützen.',
+    support_note: 'Deine Unterstützung hilft bei Tests, Wartung, Browser-Updates und neuen Funktionen. Beiträge sind optional und werden außerhalb der Chrome-Erweiterung verarbeitet. Google ist nicht Empfänger der Zahlung. Beiträge schalten in der aktuellen Version keine zusätzlichen Funktionen frei; sie unterstützen lediglich die Weiterentwicklung.',
+    support_btn_coffee: 'Kaffee spendieren ☕',
+    support_btn_paypal: 'Über PayPal unterstützen',
+    support_qr_caption: 'Scanne den QR-Code, um über PayPal zu unterstützen.',
   }
 };
 
