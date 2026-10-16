@@ -359,7 +359,7 @@ section { padding: 100px 0; }
   box-shadow: 0 20px 60px rgba(0,0,0,.55);
   border-color: var(--accent);
 }
-.screenshot-img { width: 100%; display: block; }
+.screenshot-img { width: 100%; height: auto; display: block; }
 .screenshot-zoom {
   position: absolute; bottom: 12px; right: 12px;
   background: rgba(11,15,26,.75); backdrop-filter: blur(6px);

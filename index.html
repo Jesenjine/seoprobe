@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SEOProbe — Chrome ekstenzija za SEO analizu</title>
   <meta name="description"
-    content="SEOProbe je besplatna Chrome ekstenzija za kompletnu SEO analizu: naslovi, meta, slike, linkovi, Core Web Vitals i AI detektor." />
+    content="SEOProbe je besplatna Chrome ekstenzija za kompletnu SEO analizu: SEO ocena, naslovi, meta, slike, linkovi, audit, Google SERP i AI detektor." />
+  <link rel="canonical" href="https://jesenjine.github.io/seoprobe/" />
   <meta name="theme-color" content="#0b0f1a" />
   <link rel="icon" type="image/png" href="icon128.png" />
 
@@ -14,8 +15,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="SEOProbe — Chrome Extension for SEO Analysis" />
   <meta property="og:description"
-    content="Complete SEO audit tool: headings, meta tags, images, links, Core Web Vitals and AI content detector — all in one free Chrome extension." />
-  <meta property="og:image" content="icon128.png" />
+    content="Complete SEO audit in one click: SEO score, headings, meta tags, images, links, redirect chains, Google SERP and AI writing signals — in one free Chrome extension." />
+  <meta property="og:url" content="https://jesenjine.github.io/seoprobe/" />
+  <meta property="og:image" content="https://jesenjine.github.io/seoprobe/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1400" />
+  <meta property="og:image:height" content="560" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,26 +94,26 @@
         <span data-i18n="hero_title1">Kompletna SEO analiza</span><br />
         <span class="gradient-text" data-i18n="hero_title2">u jednom kliku</span>
       </h1>
-      <p class="hero-sub" data-i18n="hero_sub">SEOProbe analizira naslove, meta tagove, slike, linkove, Core Web Vitals
-        i AI-generisani sadržaj — direktno u vašem pregledaču, bez prenosa podataka.</p>
+      <p class="hero-sub" data-i18n="hero_sub">SEOProbe analizira naslove, meta tagove, slike, linkove, Core Web Vitals,
+        Google rezultate i AI signale u tekstu — direktno u pregledaču, bez naloga i bez slanja podataka programeru.</p>
       <div class="hero-cta">
         <a href="https://chromewebstore.google.com/detail/seoprobe/gpkbckjmpifbeobpjfjilhidjjbpoing?utm_source=item-share-cb" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg" data-i18n="hero_cta">Dodaj u Chrome — besplatno</a>
         <a href="#video" class="btn btn-ghost btn-lg" data-i18n="hero_learn">Pogledaj demo</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item">
-          <span class="stat-num">6</span>
+          <span class="stat-num">10</span>
           <span class="stat-label" data-i18n="stat_tabs">analitičkih modula</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
-          <span class="stat-num">1.9</span>
+          <span class="stat-num">2.5</span>
           <span class="stat-label" data-i18n="stat_version">trenutna verzija</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat-item">
           <span class="stat-num">0</span>
-          <span class="stat-label" data-i18n="stat_data">prenetih podataka</span>
+          <span class="stat-label" data-i18n="stat_data">servera programera</span>
         </div>
       </div>
     </div>
@@ -151,50 +156,62 @@
       <div class="section-header">
         <span class="section-tag" data-i18n="feat_tag">Funkcionalnosti</span>
         <h2 data-i18n="feat_title">Sve što SEO stručnjak treba</h2>
-        <p data-i18n="feat_sub">Šest moćnih modula u jednoj laganoj Chrome ekstenziji.</p>
+        <p data-i18n="feat_sub">Deset modula u jednoj laganoj Chrome ekstenziji.</p>
       </div>
       <div class="feat-grid">
 
         <div class="feat-card">
+          <div class="feat-icon">📊</div>
+          <h3 data-i18n="f1_title">SEO pregled i ocena</h3>
+          <p data-i18n="f1_desc">SEO ocena od 0 do 100, status indeksiranja (meta robots i X-Robots-Tag), sitemap, robots.txt, pristup AI botova i detekcija CMS-a i analitike.</p>
+        </div>
+
+        <div class="feat-card">
           <div class="feat-icon">📑</div>
-          <h3 data-i18n="f1_title">Analiza naslova</h3>
-          <p data-i18n="f1_desc">Parsira sve H1–H6 tagove sa vizuelnim razlikovanjem po nivou i bojama. Odmah uočite
-            probleme u hijerarhiji naslova.</p>
+          <h3 data-i18n="f2_title">Analiza naslova</h3>
+          <p data-i18n="f2_desc">Kompletna H1–H6 hijerarhija sa bojama po nivou. Klikni na naslov i SEOProbe ga istakne direktno na stranici.</p>
         </div>
 
         <div class="feat-card">
           <div class="feat-icon">🖼️</div>
-          <h3 data-i18n="f2_title">Pregled slika</h3>
-          <p data-i18n="f2_desc">Statistika ALT tagova, filter za dekorativne slike i highlight dugme koje vizuelno
-            označava sliku direktno na stranici.</p>
+          <h3 data-i18n="f3_title">Slike i ALT tekst</h3>
+          <p data-i18n="f3_desc">Slike bez ALT teksta ili title atributa, pregled sličica i isticanje svake slike na stranici.</p>
         </div>
 
         <div class="feat-card">
           <div class="feat-icon">🏷️</div>
-          <h3 data-i18n="f3_title">Meta tagovi</h3>
-          <p data-i18n="f3_desc">Live brojaš karaktera za title i description, vizuelna kanonska URL analiza, Text/HTML
-            ratio i kompletna markup čeklista.</p>
+          <h3 data-i18n="f4_title">Meta i pregled snipeta</h3>
+          <p data-i18n="f4_desc">Dužina title i description taga u pikselima, pregled snipeta za desktop i mobilni, canonical iz HTML-a i Link zaglavlja, hreflang sa proverom povratnih linkova.</p>
         </div>
 
         <div class="feat-card">
           <div class="feat-icon">⚡</div>
-          <h3 data-i18n="f4_title">Audit &amp; Performanse</h3>
-          <p data-i18n="f4_desc">Core Web Vitals (LCP, INP), sitemap detekcija, analiza ključnih reči sa gustinom i
-            tehnički SEO pregled na jednom mestu.</p>
-        </div>
-
-        <div class="feat-card">
-          <div class="feat-icon">🤖</div>
-          <h3 data-i18n="f5_title">AI Detektor</h3>
-          <p data-i18n="f5_desc">Heuristička analiza teksta prepoznaje AI-generisani sadržaj: score 0–95, confidence
-            nivo i lista signala na srpskom.</p>
+          <h3 data-i18n="f5_title">SEO audit</h3>
+          <p data-i18n="f5_desc">On-page i tehnički SEO, Core Web Vitals (LCP, INP), pristupačnost, HTTP status, ceo lanac preusmeravanja i poređenje izvornog HTML-a sa renderovanim DOM-om.</p>
         </div>
 
         <div class="feat-card">
           <div class="feat-icon">🔗</div>
-          <h3 data-i18n="f6_title">Social &amp; Linkovi</h3>
-          <p data-i18n="f6_desc">OG i Twitter/X preview, tabela svih linkova sa HEAD fetch proverom statusa, broken link
-            detekcija i CSV/Sheets export.</p>
+          <h3 data-i18n="f6_title">Linkovi i društvene mreže</h3>
+          <p data-i18n="f6_desc">Interni i eksterni linkovi, provera svih linkova jednim klikom, pokvareni linkovi, Open Graph i Twitter/X kartice.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">#️⃣</div>
+          <h3 data-i18n="f7_title">Ključne reči</h3>
+          <p data-i18n="f7_desc">Gustina i istaknutost fraza od jedne do četiri reči. Odmah vidiš preoptimizaciju i ponavljanje.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🤖</div>
+          <h3 data-i18n="f8_title">AI detektor</h3>
+          <p data-i18n="f8_desc">Lokalna heuristička procena AI signala u tekstu, sa bibliotekama fraza za srpski i engleski. Rezultat je procena, ne dokaz.</p>
+        </div>
+
+        <div class="feat-card">
+          <div class="feat-icon">🔎</div>
+          <h3 data-i18n="f9_title">Google SERP</h3>
+          <p data-i18n="f9_desc">Organski rezultati, pitanja „People also ask” i srodne pretrage sa stranice Google rezultata. Kopiraj ih ili izvezi u CSV, XLSX i Google Sheets.</p>
         </div>
 
       </div>
@@ -207,60 +224,85 @@
       <div class="section-header">
         <span class="section-tag" data-i18n="screens_tag">Snimci ekrana</span>
         <h2 data-i18n="screens_title">Svaki detalj na dlanu</h2>
-        <p data-i18n="screens_sub">Šest tabova, svaki sa preciznim podacima i jasnim vizuelnim prikazom.</p>
+        <p data-i18n="screens_sub">Deset tabova, svaki sa preciznim podacima i jasnim vizuelnim prikazom.</p>
       </div>
       <div class="screenshot-grid">
 
         <div class="screenshot-item">
-          <a class="screenshot-img-wrap" href="assets/Screenshot%202026-05-12%20190018.png" target="_blank"
-            rel="noopener" aria-label="Tab Naslovi">
-            <img src="assets/Screenshot%202026-05-12%20190018.png" alt="SEOProbe — Tab Naslovi, H1–H6 analiza"
-              class="screenshot-img" loading="lazy" />
+          <a class="screenshot-img-wrap" href="assets/seoprobe-seo-summary.jpg" target="_blank"
+            rel="noopener" aria-label="SEO pregled">
+            <img src="assets/seoprobe-seo-summary.jpg" alt="SEOProbe — SEO pregled sa ocenom 92/100"
+              class="screenshot-img" width="1280" height="800" loading="lazy" />
             <div class="screenshot-zoom">🔍</div>
           </a>
           <div class="screenshot-caption">
-            <span class="screenshot-tab-badge">📑 <span data-i18n="sc1_badge">Naslovi</span></span>
-            <p data-i18n="sc1_cap">H1–H6 hijerarhija sa vizuelnim razlikovanjem po nivou i bojama</p>
+            <span class="screenshot-tab-badge">📊 <span data-i18n="sc1_badge">SEO pregled</span></span>
+            <p data-i18n="sc1_cap">SEO ocena 0–100, status indeksiranja, detektovane tehnologije i ključni signali na jednom ekranu</p>
           </div>
         </div>
 
         <div class="screenshot-item">
-          <a class="screenshot-img-wrap" href="assets/Screenshot%202026-05-12%20190131.png" target="_blank"
-            rel="noopener" aria-label="Tab Slike">
-            <img src="assets/Screenshot%202026-05-12%20190131.png" alt="SEOProbe — Tab Slike, ALT analiza"
-              class="screenshot-img" loading="lazy" />
+          <a class="screenshot-img-wrap" href="assets/seoprobe-seo-audit.jpg" target="_blank"
+            rel="noopener" aria-label="Audit">
+            <img src="assets/seoprobe-seo-audit.jpg" alt="SEOProbe — SEO audit stranice"
+              class="screenshot-img" width="1280" height="800" loading="lazy" />
             <div class="screenshot-zoom">🔍</div>
           </a>
           <div class="screenshot-caption">
-            <span class="screenshot-tab-badge">🖼️ <span data-i18n="sc2_badge">Slike</span></span>
-            <p data-i18n="sc2_cap">ALT statistike, thumbnail pregled i highlight dugme za svaku sliku</p>
+            <span class="screenshot-tab-badge">⚡ <span data-i18n="sc2_badge">Audit</span></span>
+            <p data-i18n="sc2_cap">On-page i tehnički SEO, performanse i pristupačnost u jednom izveštaju</p>
           </div>
         </div>
 
         <div class="screenshot-item">
-          <a class="screenshot-img-wrap" href="assets/Screenshot%202026-05-12%20190152.png" target="_blank"
-            rel="noopener" aria-label="Tab Meta">
-            <img src="assets/Screenshot%202026-05-12%20190152.png" alt="SEOProbe — Tab Meta, live brojaš karaktera"
-              class="screenshot-img" loading="lazy" />
+          <a class="screenshot-img-wrap" href="assets/seoprobe-headings.jpg" target="_blank"
+            rel="noopener" aria-label="Naslovi">
+            <img src="assets/seoprobe-headings.jpg" alt="SEOProbe — analiza strukture naslova"
+              class="screenshot-img" width="1280" height="800" loading="lazy" />
             <div class="screenshot-zoom">🔍</div>
           </a>
           <div class="screenshot-caption">
-            <span class="screenshot-tab-badge">🏷️ <span data-i18n="sc3_badge">Meta</span></span>
-            <p data-i18n="sc3_cap">Live brojaš za title i description, canonical analiza i Text/HTML ratio</p>
+            <span class="screenshot-tab-badge">📑 <span data-i18n="sc3_badge">Naslovi</span></span>
+            <p data-i18n="sc3_cap">H1–H6 hijerarhija, uz isticanje svakog naslova direktno na stranici</p>
           </div>
         </div>
 
         <div class="screenshot-item">
-          <a class="screenshot-img-wrap" href="assets/Screenshot%202026-05-12%20190209.png" target="_blank"
-            rel="noopener" aria-label="Tab Audit">
-            <img src="assets/Screenshot%202026-05-12%20190209.png" alt="SEOProbe — Tab Audit, SEO score 78/100"
-              class="screenshot-img" loading="lazy" />
+          <a class="screenshot-img-wrap" href="assets/seoprobe-google-serp.jpg" target="_blank"
+            rel="noopener" aria-label="Google SERP">
+            <img src="assets/seoprobe-google-serp.jpg" alt="SEOProbe — analiza Google rezultata pretrage"
+              class="screenshot-img" width="1280" height="800" loading="lazy" />
             <div class="screenshot-zoom">🔍</div>
           </a>
           <div class="screenshot-caption">
-            <span class="screenshot-tab-badge">⚡ <span data-i18n="sc4_badge">Audit</span></span>
-            <p data-i18n="sc4_cap">SEO score 78/100 — On-page, Technical, Performance i Accessibility u jednom
-              dashboardu</p>
+            <span class="screenshot-tab-badge">🔎 <span data-i18n="sc4_badge">Google SERP</span></span>
+            <p data-i18n="sc4_cap">Organski rezultati pretrage, sa izvozom u CSV, XLSX i Google Sheets</p>
+          </div>
+        </div>
+
+        <div class="screenshot-item">
+          <a class="screenshot-img-wrap" href="assets/seoprobe-ai-detector.jpg" target="_blank"
+            rel="noopener" aria-label="AI detektor">
+            <img src="assets/seoprobe-ai-detector.jpg" alt="SEOProbe — AI detektor sadržaja"
+              class="screenshot-img" width="1280" height="800" loading="lazy" />
+            <div class="screenshot-zoom">🔍</div>
+          </a>
+          <div class="screenshot-caption">
+            <span class="screenshot-tab-badge">🤖 <span data-i18n="sc5_badge">AI detektor</span></span>
+            <p data-i18n="sc5_cap">Procena AI signala u tekstu i ponavljanja fraza</p>
+          </div>
+        </div>
+
+        <div class="screenshot-item">
+          <a class="screenshot-img-wrap" href="assets/seoprobe-raw-vs-rendered.jpg" target="_blank"
+            rel="noopener" aria-label="Renderovanje">
+            <img src="assets/seoprobe-raw-vs-rendered.jpg" alt="SEOProbe — poređenje izvornog HTML-a i renderovanog DOM-a"
+              class="screenshot-img" width="1280" height="800" loading="lazy" />
+            <div class="screenshot-zoom">🔍</div>
+          </a>
+          <div class="screenshot-caption">
+            <span class="screenshot-tab-badge">🧩 <span data-i18n="sc6_badge">Renderovanje</span></span>
+            <p data-i18n="sc6_cap">Poređenje izvornog HTML-a i renderovanog DOM-a za sajtove na JavaScript-u</p>
           </div>
         </div>
 
@@ -273,7 +315,7 @@
     <div class="container">
       <div class="lead-inner">
         <div class="lead-text">
-          <h2 class="lead-title" data-i18n="lead_title">PPotrebna vam je pomoć SEO stručnjaka?</h2>
+          <h2 class="lead-title" data-i18n="lead_title">Potrebna vam je pomoć SEO stručnjaka?</h2>
           <p class="lead-desc" data-i18n="lead_desc">Ako nemate vremena da sami radite optimizaciju, stojim vam na
             raspolaganju za profesionalne SEO usluge.</p>
         </div>
@@ -312,7 +354,7 @@
           <div class="step-num">03</div>
           <div class="step-body">
             <h3 data-i18n="s3_title">Analiziraj &amp; eksportuj</h3>
-            <p data-i18n="s3_desc">Istraži tabove, pronađi SEO probleme i eksportuj izveštaj u CSV ili direktno u Google
+            <p data-i18n="s3_desc">Istraži tabove, pronađi SEO probleme i izvezi izveštaj u XLSX, CSV ili direktno u Google
               Sheets.</p>
           </div>
         </div>
@@ -326,14 +368,14 @@
       <div class="export-text">
         <span class="section-tag" data-i18n="exp_tag">Export</span>
         <h2 data-i18n="exp_title">Izveštaji jednim klikom</h2>
-        <p data-i18n="exp_desc">Eksportuj kompletnu SEO analizu u CSV fajl ili direktno u Google Sheets — sa
+        <p data-i18n="exp_desc">Izvezi kompletnu SEO analizu u XLSX ili CSV fajl, ili direktno u Google Sheets — sa
           organizovanim tabovima, uslovnim formatiranjem i podrškom za UTF-8 karaktere (č, ć, ž, š, đ).</p>
         <ul class="export-list">
-          <li><span class="check">✓</span><span data-i18n="el1">CSV sa BOM-om za ispravan prikaz u Excelu</span></li>
-          <li><span class="check">✓</span><span data-i18n="el2">Google Sheets: Pregled, Naslovi, Slike, Linkovi, Ključne
-              reči</span></li>
-          <li><span class="check">✓</span><span data-i18n="el3">OAuth2 autorizacija — bez čuvanja tokena na
-              serverima</span></li>
+          <li><span class="check">✓</span><span data-i18n="el1">XLSX i CSV (sa BOM-om) za ispravan prikaz u Excelu</span></li>
+          <li><span class="check">✓</span><span data-i18n="el2">Google Sheets: 10 tabova, od pregleda i audita do ključnih reči i AI
+              signala</span></li>
+          <li><span class="check">✓</span><span data-i18n="el3">OAuth2 sa drive.file pristupom — SEOProbe vidi samo fajlove koje
+              sam napravi</span></li>
         </ul>
       </div>
       <div class="export-visual">
@@ -344,10 +386,10 @@
           </div>
           <div class="sheets-tabs">
             <span class="sheets-tab active">Pregled</span>
+            <span class="sheets-tab">Audit</span>
             <span class="sheets-tab">Naslovi</span>
             <span class="sheets-tab">Slike</span>
             <span class="sheets-tab">Linkovi</span>
-            <span class="sheets-tab">Ključne reči</span>
           </div>
           <div class="sheets-rows">
             <div class="sheets-row head"><span>Polje</span><span>Vrednost</span><span>Status</span></div>
@@ -370,26 +412,27 @@
       <div class="section-header">
         <span class="section-tag" data-i18n="priv_tag">Privatnost</span>
         <h2 data-i18n="priv_title">Vaši podaci ostaju vaši</h2>
-        <p data-i18n="priv_sub">SEOProbe radi isključivo lokalno u vašem pregledaču. Nema servera, nema praćenja.</p>
+        <p data-i18n="priv_sub">SEOProbe nema svoj server i ne prati korisnike. Rezultati analize napuštaju pregledač samo kad
+          sam pokreneš izvoz u Google Sheets.</p>
       </div>
       <div class="privacy-grid">
         <div class="priv-card">
           <div class="priv-icon">🔒</div>
-          <h3 data-i18n="p1_title">Nema prenosa podataka</h3>
-          <p data-i18n="p1_desc">Analizirane stranice se ne šalju na nikakav server. Sva obrada se odvija lokalno u
-            Chrome ekstenziji.</p>
+          <h3 data-i18n="p1_title">Bez servera programera</h3>
+          <p data-i18n="p1_desc">Analiza se obrađuje u pregledaču i ništa se ne šalje programeru. Ekstenzija šalje zahteve
+            samo sajtu koji analiziraš: za HTML, zaglavlja i proveru linkova.</p>
         </div>
         <div class="priv-card">
           <div class="priv-icon">🔑</div>
           <h3 data-i18n="p2_title">OAuth bez čuvanja tokena</h3>
-          <p data-i18n="p2_desc">Google autorizacija koristi Chrome Identity API. Token se ne čuva u bazi programera.
-          </p>
+          <p data-i18n="p2_desc">Google autorizacija ide preko Chrome Identity API-ja, samo sa drive.file pristupom. Token
+            se ne čuva kod programera.</p>
         </div>
         <div class="priv-card">
-          <div class="priv-icon">👁️</div>
-          <h3 data-i18n="p3_title">Analiza na zahtev</h3>
-          <p data-i18n="p3_desc">SEOProbe analizira stranicu samo kada korisnik otvori popup. Nema automatskog praćenja
-            u pozadini.</p>
+          <div class="priv-icon">⏱️</div>
+          <h3 data-i18n="p3_title">Privremeni podaci</h3>
+          <p data-i18n="p3_desc">Core Web Vitals i lanac preusmeravanja beleže se dok se stranica učitava, da bi bili
+            spremni kad otvoriš panel. Ostaju u pregledaču i brišu se kad zatvoriš tab.</p>
         </div>
         <div class="priv-card">
           <div class="priv-icon">⚙️</div>
@@ -419,7 +462,7 @@
         </svg>
         <span data-i18n="inst_btn">Dodaj u Chrome — besplatno</span>
       </a>
-      <p class="install-note" data-i18n="inst_note">Chrome Web Store · Manifest V3 · Verzija 1.9</p>
+      <p class="install-note" data-i18n="inst_note">Chrome Web Store · Manifest V3 · Verzija 2.5</p>
     </div>
   </section>
 
